@@ -105,8 +105,8 @@ class AutoClient(Client):
                 client = create_object(client_spec)
 
             elif organization == "xtof":
-                from helm.proxy.clients.simple_client import SimpleClient
-                client = SimpleClient(tokenizer=tokenizer, cache_config=cache_config)
+                from helm.proxy.clients.xtof_client import XtofClient
+                client = XtofClient(tokenizer=tokenizer, cache_config=cache_config)
 
             elif organization == "neurips":
                 client = HTTPModelClient(tokenizer=tokenizer, cache_config=cache_config)
