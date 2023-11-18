@@ -115,6 +115,11 @@ class Model:
 ALL_MODELS = [
     # Local Model
     Model(
+        group="xtof",
+        name="xtof/bloomz",
+        tags=[TEXT_MODEL_TAG, FULL_FUNCTIONALITY_TEXT_MODEL_TAG, GPT2_TOKENIZER_TAG],
+    ),
+    Model(
         group="neurips",
         name="neurips/local",
         tags=[TEXT_MODEL_TAG, FULL_FUNCTIONALITY_TEXT_MODEL_TAG, GPT2_TOKENIZER_TAG],

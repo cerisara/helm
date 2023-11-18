@@ -91,7 +91,7 @@ class WindowServiceFactory:
             else:
                 window_service = OpenAIWindowService(service)
         # For the Google models, we approximate with the OpenAIWindowService
-        elif organization == "simple" or organization == "google":
+        elif organization == "simple" or organization == "google" or organization == "xtof":
             from helm.benchmark.window_services.openai_window_service import OpenAIWindowService
 
             window_service = OpenAIWindowService(service)

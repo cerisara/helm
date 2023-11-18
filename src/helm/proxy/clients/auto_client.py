@@ -103,6 +103,11 @@ class AutoClient(Client):
                     provider_bindings={"api_key": provide_api_key},
                 )
                 client = create_object(client_spec)
+
+            elif organization == "xtof":
+                from helm.proxy.clients.simple_client import SimpleClient
+                client = SimpleClient(tokenizer=tokenizer, cache_config=cache_config)
+
             elif organization == "neurips":
                 client = HTTPModelClient(tokenizer=tokenizer, cache_config=cache_config)
             elif organization == "openai":
@@ -332,7 +337,9 @@ class AutoClient(Client):
             tokenizer = AnthropicTokenizer(cache_config=cache_config)
         elif organization == "simple":
             from helm.proxy.tokenizers.simple_tokenizer import SimpleTokenizer
-
+            tokenizer = SimpleTokenizer()
+        elif organization == "xtof":
+            from helm.proxy.tokenizers.simple_tokenizer import SimpleTokenizer
             tokenizer = SimpleTokenizer()
         elif organization == "lightningai":
             from helm.proxy.tokenizers.lit_gpt_tokenizer import LitGPTTokenizer

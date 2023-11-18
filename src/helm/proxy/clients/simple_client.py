@@ -20,7 +20,7 @@ class SimpleClient(CachingClient):
             "n": request.num_completions,
         }
 
-        if request.model_engine == "model1":
+        if request.model_engine == "model1" or request.model_engine == "bloomz":
 
             def do_it():
                 return self.invoke_model1(raw_request)
